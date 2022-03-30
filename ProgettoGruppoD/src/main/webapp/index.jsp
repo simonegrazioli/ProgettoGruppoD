@@ -20,10 +20,10 @@
             <div class="row justify-content-center">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="Accedi.jsp">Accedi</a>
+                        <a class="nav-link" href="Accesso.jsp" style="color: #940000";><b><u>Accedi</u></b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Registrati.jsp">Registrati</a>
+                        <a class="nav-link" href="Registrati.jsp" style="color: #940000";><b><u>Registrati</u></b></a>
                     </li>
                 </ul>
             </div>
