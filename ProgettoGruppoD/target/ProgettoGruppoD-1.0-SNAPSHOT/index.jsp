@@ -18,16 +18,14 @@
                 <h5 style="text-align: center;">Accedi o Registrati per scoprire i nostri contenuti</h3>
             </div>
             <div class="row justify-content-center">
-                <nav class="navbar justify-content-center">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Accedi.jsp">Accedi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Registrati.jsp">Registrati</a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Accedi.jsp">Accedi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Registrati.jsp">Registrati</a>
+                    </li>
+                </ul>
             </div>
         </div>
         
