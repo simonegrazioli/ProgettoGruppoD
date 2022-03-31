@@ -12,6 +12,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h3>Ciao, per registrarti compila i seguenti campi</h3>
+        <form action="e_registrati" method="GET">
+            <input type="text" name="nome_utente" placeholder="inserisci il tuo username"/><br>
+            <input type="password" name="psw" placeholder="inserisci la password"/><br>
+            <input type="text" name="mail" placeholder="inserisci una mail"/><br>
+            <input type="number" name="eta" placeholder="inserisci l'età"/><br>
+            <select name="sesso">
+                <option value="altro">Altro</option>
+                <option value="maschio">Maschio</option>
+                <option value="femmina">Femmina</option>
+            </select><br>
+            <input type="submit" value="invia"/>
+                
+        </form>
     </body>
 </html>

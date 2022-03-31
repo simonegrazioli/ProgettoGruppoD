@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="accedi" method="GET">
+                <input type="text" name="nome_utente" placeholder="inserisci il tuo username"/><br>
+                <input type="password" placeholder="inserisci la password"/><br><br>
+                <input type="submit" value="invia"/>
+        </form>
     </body>
 </html>
