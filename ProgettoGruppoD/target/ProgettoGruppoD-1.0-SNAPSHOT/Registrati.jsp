@@ -28,7 +28,7 @@
                             <input type="text" name="nome_utente" placeholder="Il tuo username" class="form-control"/><br>
                             <input type="password" name="psw" placeholder="La tua password" class="form-control"/><br>
                             <input type="text" name="mail" placeholder="La tua mail" class="form-control"/><br>
-                            <input type="number" name="eta" placeholder="La tua età" class="form-control"/><br>
+                            <input type="number" name="eta" placeholder="La tua età" class="form-control" min="0" max="120"/><br>
                             
                             <div class="row justify-content-center">
                             <select name="sesso">
