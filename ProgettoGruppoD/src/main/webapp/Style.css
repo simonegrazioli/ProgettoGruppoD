@@ -23,15 +23,16 @@
     margin-right: 500px;
     background-color: #D2D2D2;
     border-radius: 10px;
-    border-color: #FF6600;
-    border-width: 3px;
-    border-style: solid;
 }
 #containerregistrati{
     margin-left: 600px;
     margin-right: 600px;
     background-color: #D2D2D2;
     border-radius: 10px;
-    border-color: #FF6600;
-    border-width: 5px;
+}
+#containeraccedi{
+    margin-left: 600px;
+    margin-right: 600px;
+    background-color: #D2D2D2;
+    border-radius: 10px;
 }
