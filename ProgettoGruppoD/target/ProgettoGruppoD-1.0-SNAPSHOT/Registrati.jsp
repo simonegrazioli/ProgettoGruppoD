@@ -24,7 +24,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
-                    <form action="invia" method="POST">
+                    <form action="e_registrati" method="POST">
                             <input type="text" name="nome_utente" placeholder="Il tuo username" class="form-control" style="width:175px;  height: 35px"/><br>
                             <input type="password" name="psw" placeholder="La tua password" class="form-control" style="width:175px; height: 35px"/><br>
                             <input type="text" name="mail" placeholder="La tua mail" class="form-control" style="width:175px;  height: 35px"/><br>

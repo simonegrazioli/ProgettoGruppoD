@@ -1,4 +1,4 @@
-package database;
+package Database;
 import java.sql.*;
 
 public class DatabaseManager {
@@ -13,13 +13,11 @@ public class DatabaseManager {
     
     public static DatabaseManager generaIstanza() {
         if (dbManager == null) { dbManager = new DatabaseManager(); }
-        
         return dbManager;
     }
-    
+
     public Connection connetti() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver"); 
-            
         return DriverManager.getConnection(db_url + db_port + db_name, user, pwd);
     }
     
