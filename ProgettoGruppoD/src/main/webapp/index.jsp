@@ -13,7 +13,7 @@
 
     </head>
     <body id="body">
-        <div id="container" style="margin-top: 250px;">
+        <div id="container" style="margin-top: 250px; padding: 30px">
             <div class="row justify-content-center">
                 <h1 style="text-align: center; color: black">Ciao!</h1><br>
                 <h5 style="text-align: center; color: black">Accedi o Registrati per scoprire i nostri contenuti</h3>

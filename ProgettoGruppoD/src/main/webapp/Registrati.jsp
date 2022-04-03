@@ -19,22 +19,23 @@
         <div id="containerregistrati" style="margin-top: 125px;">
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center" style="padding: 30px">
-                    <h1>Registrati<br></h1>
+                    <h1>Registrati</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
                     <form action="invia" method="POST">
-                            <input type="text" name="nome_utente" placeholder="Il tuo username" class="form-control"/><br>
-                            <input type="password" name="psw" placeholder="La tua password" class="form-control"/><br>
-                            <input type="text" name="mail" placeholder="La tua mail" class="form-control"/><br>
-                            <input type="number" name="eta" placeholder="La tua età" class="form-control"/><br>
+                            <input type="text" name="nome_utente" placeholder="Il tuo username" class="form-control" style="width:175px;  height: 35px"/><br>
+                            <input type="password" name="psw" placeholder="La tua password" class="form-control" style="width:175px; height: 35px"/><br>
+                            <input type="text" name="mail" placeholder="La tua mail" class="form-control" style="width:175px;  height: 35px"/><br>
+                            <input type="number" name="eta" placeholder="La tua età" class="form-control" style="width:175px; height: 35px"/><br>
                             
-                            <div class="row justify-content-center">
-                            <select name="sesso">
-                                <option value="altro" class="form-control">Altro</option>
+                            <div class="form" >
+                            <select name="sesso" style="border-radius: 5px; width:175px;  height: 35px">
+                                <option value="null" class="form-control" selected disabled="enabled">Sesso</option>
                                 <option value="maschio">Maschio</option>
                                 <option value="femmina">Femmina</option>
+                                <option value="altro">Altro </option>
                             </select><br>
                             </div>
                             
