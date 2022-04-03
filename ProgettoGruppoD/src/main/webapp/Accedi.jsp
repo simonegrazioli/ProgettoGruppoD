@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="accedi" method="GET">
+        <form action="accedi" method="POST">
                 <input type="text" name="nome_utente" placeholder="inserisci il tuo username"/><br>
                 <input type="password" placeholder="inserisci la password"/><br><br>
                 <input type="submit" value="invia"/>

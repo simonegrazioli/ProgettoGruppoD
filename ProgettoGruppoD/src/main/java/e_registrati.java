@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class e_registrati extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String utente = request.getParameter("nome_utente");
         String password = request.getParameter("psw");
@@ -20,6 +20,15 @@ public class e_registrati extends HttpServlet {
         String sesso = request.getParameter("sesso");
         request.setAttribute("nome_utente", utente);
         request.getServletContext().getRequestDispatcher("/Benvenuto.jsp").forward(request, response);
-        
+        if (utente.isEmpty() || password.isEmpty() || mail.isEmpty() || sesso.isEmpty()) {
+                request.setAttribute("messaggio", "Hai inserito dei dati errati, riprova.");
+                request.setAttribute("coloreMessaggio", "orange");
+
+                // Inoltro la richiesta
+                request.getServletContext().getRequestDispatcher("/inserisci.jsp").forward(request, response);
+                return;
+            }
     }
+    
+    
 }
