@@ -16,14 +16,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     </head>
-<<<<<<< HEAD
-    <body>
-        <form action="accedi" method="POST">
-                <input type="text" name="nome_utente" placeholder="inserisci il tuo username"/><br>
-                <input type="password" placeholder="inserisci la password"/><br><br>
-                <input type="submit" value="invia"/>
-        </form>
-=======
     <body id="body">
         <div id="containeraccedi" style="margin-top: 125px;">
             <div class="row justify-content-center">
@@ -41,6 +33,5 @@
                 </div>
             </div>
         </div>
->>>>>>> 684b5675e94bd50aa369113608b1c23b749256cd
     </body>
 </html>

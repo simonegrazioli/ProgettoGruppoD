@@ -27,7 +27,6 @@ public class e_registrati extends HttpServlet {
             String s_eta = request.getParameter("eta"); 
             int eta = Integer.parseInt(s_eta);
             String sesso = request.getParameter("sesso");
-            //request.getServletContext().getRequestDispatcher("/Benvenuto.jsp").forward(request, response);
             if (user.isEmpty() || password.isEmpty() || mail.isEmpty() || sesso.isEmpty() || (eta<14 || eta>120)) 
             {
                     request.setAttribute("messaggio", "Hai inserito dei dati errati, riprova.");
@@ -38,11 +37,7 @@ public class e_registrati extends HttpServlet {
             
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
-            //controllo se la mail è già stata usata in un'altra registrazione
             ResultSet query_controlla=query.executeQuery("select * from utenti");
-            //ArrayList<Utenti> lista = new ArrayList<>();
-            //Utenti [] elenco={};
-            //int i=0;
             boolean c=false;
             while(query_controlla.next()){
                 String us = query_controlla.getString("username");
@@ -53,9 +48,6 @@ public class e_registrati extends HttpServlet {
                 if(user==us || mail==m){
                     c=true;
                 }
-                //Utenti ut = new Utenti (us,p,m,e,s);
-                //elenco[i]=ut;
-                //i++;
             }
             
             if(!c){
@@ -73,10 +65,8 @@ public class e_registrati extends HttpServlet {
             
             conn.close();
         } catch (Exception errore) {
-            // Imposto i parametri
             request.setAttribute("messaggio", "Si è verificato un errore, contattare l'amministratore.");
             request.setAttribute("coloreMessaggio", "red");
-            // Inoltro la richiesta
             request.getServletContext().getRequestDispatcher("/Registrati.jsp").forward(request, response);
         }
     }
