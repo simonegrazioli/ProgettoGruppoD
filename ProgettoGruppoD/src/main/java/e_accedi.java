@@ -30,18 +30,14 @@ public class e_accedi extends HttpServlet {
             
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
-            ResultSet query_controlla=query.executeQuery("select username,mail,psw from utenti");
+            
+            ResultSet query_controlla=query.executeQuery("select username,psw from utenti where username="+user_mail+"");
             boolean c=false;
-            while(query_controlla.next()){
-                String us = query_controlla.getString("username");
-                String p = query_controlla.getString("psw");
-                String m = query_controlla.getString("mail");
-                if((user_mail==us || user_mail==m) && password==p){
+            if(password.equals(query_controlla.getString("psw"))){
                     c=true;
-                }
             }
             
-            if(!c){
+            if(c){
                 request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
             }
             else{
@@ -52,7 +48,7 @@ public class e_accedi extends HttpServlet {
             
             conn.close();
         } catch (Exception errore) {
-            request.setAttribute("messaggio", errore);
+            request.setAttribute("messaggio", "Accesso no effettuato");
             request.setAttribute("coloreMessaggio", "red");
             request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
         }
