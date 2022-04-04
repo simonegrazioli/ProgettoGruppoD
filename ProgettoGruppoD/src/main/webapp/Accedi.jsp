@@ -26,7 +26,7 @@
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
                     <form action="e_accedi" method="POST">
-                        <input type="text" name="user_mail" placeholder="Username o Mail" class="form-control" style="width:175px;  height: 35px"/><br>
+                        <input type="text" name="user" placeholder="Username o Mail" class="form-control" style="width:175px;  height: 35px"/><br>
                         <input type="password" name="psw" placeholder="Password" class="form-control" style="width:175px;  height: 35px"/>
                         <input type="submit" value="Invia" class="nav-link" style="color: white; border-style: none; margin: 30px auto"/>
                     </form>

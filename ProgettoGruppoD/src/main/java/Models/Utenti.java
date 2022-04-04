@@ -16,6 +16,11 @@ public class Utenti {
         sesso=s;
     }
     
+    public Utenti(String u, String p) {
+        user=u;
+        psw=p;
+    }
+    
     public String getUser() { return user; }
     public String getPsw() { return psw; }
     public int getEta() { return eta; }

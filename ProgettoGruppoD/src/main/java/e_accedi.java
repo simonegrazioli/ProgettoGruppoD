@@ -17,10 +17,10 @@ public class e_accedi extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String user_mail = request.getParameter("user_mail");
+            String user = request.getParameter("user");
             String password = request.getParameter("psw");
 
-            if (user_mail.isEmpty() || password.isEmpty()) 
+            if (user.isEmpty() || password.isEmpty()) 
             {
                     request.setAttribute("messaggio", "Hai inserito dei dati errati, riprova.");
                     request.setAttribute("coloreMessaggio", "red");
@@ -31,26 +31,24 @@ public class e_accedi extends HttpServlet {
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-            ResultSet query_controlla=query.executeQuery("select username,psw from utenti where username="+user_mail+"");
+            ResultSet query_controlla=query.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
             boolean c=false;
             if(password.equals(query_controlla.getString("psw"))){
                     c=true;
             }
             
-            if(c){
+            if(!c){
                 request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
             }
             else{
                 request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
             }
-            
-            
-            
+
             conn.close();
         } catch (Exception errore) {
-            request.setAttribute("messaggio", "Accesso no effettuato");
-            request.setAttribute("coloreMessaggio", "red");
-            request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
+            //request.setAttribute("messaggio", errore);
+            //request.setAttribute("coloreMessaggio", "red");
+            request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
         }
         
     }
