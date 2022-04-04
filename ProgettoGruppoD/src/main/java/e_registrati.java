@@ -37,34 +37,15 @@ public class e_registrati extends HttpServlet {
             
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
-            ResultSet query_controlla=query.executeQuery("select * from utenti");
-            boolean c=false;
-            while(query_controlla.next()){
-                String us = query_controlla.getString("username");
-                String p = query_controlla.getString("psw");
-                String m = query_controlla.getString("mail");
-                String s = query_controlla.getString("sesso");
-                int e = Integer.parseInt(query_controlla.getString("eta"));
-                if(user==us || mail==m){
-                    c=true;
-                }
-            }
             
-            if(!c){
                 String sql = "INSERT INTO persone (username, psw, mail, eta, sesso)" + 
                     "VALUES('" + user + "', '" + password + "', '" + mail + "', '" + eta + "', '" + sesso +"')";
                 boolean result = query.execute(sql);
                 request.getServletContext().getRequestDispatcher("/Benvenuto.jsp").forward(request, response);
-            }
-            else{
-                request.getServletContext().getRequestDispatcher("/Registrati.jsp").forward(request, response);
-            }
-            
-            
-            
+                
             conn.close();
         } catch (Exception errore) {
-            request.setAttribute("messaggio", "Si è verificato un errore, contattare l'amministratore.");
+            request.setAttribute("messaggio", errore);
             request.setAttribute("coloreMessaggio", "red");
             request.getServletContext().getRequestDispatcher("/Registrati.jsp").forward(request, response);
         }

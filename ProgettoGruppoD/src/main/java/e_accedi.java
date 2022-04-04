@@ -52,7 +52,7 @@ public class e_accedi extends HttpServlet {
             
             conn.close();
         } catch (Exception errore) {
-            request.setAttribute("messaggio", "Si è verificato un errore, contattare l'amministratore.");
+            request.setAttribute("messaggio", errore);
             request.setAttribute("coloreMessaggio", "red");
             request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
         }
