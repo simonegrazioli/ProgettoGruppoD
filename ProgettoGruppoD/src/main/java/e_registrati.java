@@ -38,10 +38,10 @@ public class e_registrati extends HttpServlet {
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-                String sql = "INSERT INTO persone (username, psw, mail, eta, sesso)" + 
+                String sql = "INSERT INTO utenti (username, psw, mail, eta, sesso)" + 
                     "VALUES('" + user + "', '" + password + "', '" + mail + "', '" + eta + "', '" + sesso +"')";
                 boolean result = query.execute(sql);
-                request.getServletContext().getRequestDispatcher("/Benvenuto.jsp").forward(request, response);
+                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
                 
             conn.close();
         } catch (Exception errore) {
