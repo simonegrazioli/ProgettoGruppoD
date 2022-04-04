@@ -41,8 +41,8 @@ public class e_accedi extends HttpServlet {
                 }
             }
             
-            if(c){
-                request.getServletContext().getRequestDispatcher("/Benvenuto.jsp").forward(request, response);
+            if(!c){
+                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
             }
             else{
                 request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
