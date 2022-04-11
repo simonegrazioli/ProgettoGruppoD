@@ -19,6 +19,9 @@ public class e_accedi extends HttpServlet {
         try {
             String user = request.getParameter("user");
             String password = request.getParameter("psw");
+            
+            System.out.println(user);
+            System.out.println(password);
 
             if (user.isEmpty() || password.isEmpty()) 
             {
@@ -31,18 +34,19 @@ public class e_accedi extends HttpServlet {
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-            ResultSet query_controlla=query.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
-            boolean c=false;
-            if(password.equals(query_controlla.getString("psw"))){
-                    c=true;
+            ResultSet query_controlla = query.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
+            
+            //System.out.println(query_controlla.getString("psw"));
+            while(query_controlla.next()){
+                String u=query_controlla.getString("username");
+                String p=query_controlla.getString("psw");
+            }
+            if(!password.equals(query_controlla.getString("psw"))){
+                    request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
+                    return;
             }
             
-            if(!c){
-                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
-            }
-            else{
-                request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
-            }
+            request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
 
             conn.close();
         } catch (Exception errore) {
