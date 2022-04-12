@@ -45,8 +45,8 @@ public class e_registrati extends HttpServlet {
                 
             conn.close();
         } catch (Exception errore) {
-            //request.setAttribute("messaggio", "Registrazione non effettuata correttamente");
-            //request.setAttribute("coloreMessaggio", "red");
+            request.setAttribute("messaggio", "Registrazione non effettuata correttamente");
+            request.setAttribute("coloreMessaggio", "red");
             request.getServletContext().getRequestDispatcher("/Registrati.jsp").forward(request, response);
         }
     }

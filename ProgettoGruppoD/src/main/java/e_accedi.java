@@ -55,13 +55,15 @@ public class e_accedi extends HttpServlet {
             else
             {
                 request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
+                request.setAttribute("messaggio", "Non è satto possibile effettuare l'accesso");
+                request.setAttribute("coloreMessaggio", "red");
             }
 
             conn.close();
         } catch (Exception errore) {
-            //request.setAttribute("messaggio", errore);
-            //request.setAttribute("coloreMessaggio", "red");
-            request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            request.setAttribute("messaggio", "C'è stato un errore nell'accesso");
+            request.setAttribute("coloreMessaggio", "red");
+            request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
         }
         
     }

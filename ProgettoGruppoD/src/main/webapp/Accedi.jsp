@@ -23,6 +23,15 @@
                     <h1>Accedi</h1>
                 </div>
             </div>
+            <% 
+                if (request.getAttribute("coloreMessaggio") != null) {
+            %>
+            <div class="row justify-content-center text-center" style="margin-top: 15px;">
+                <p style="color: ${coloreMessaggio}">${messaggio}</p>
+            </div>
+            <% 
+                }
+            %>
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
                     <form action="e_accedi" method="POST">
