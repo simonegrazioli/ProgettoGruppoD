@@ -1,6 +1,7 @@
 import Database.DatabaseManager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -34,19 +35,27 @@ public class e_accedi extends HttpServlet {
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-            ResultSet query_controlla = query.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
-            
-            //System.out.println(query_controlla.getString("psw"));
+            ResultSet query_controlla = query.executeQuery("SELECT COUNT(*) AS 'conta' FROM utenti WHERE username = '" + user + "' AND psw = '" + password + "'");
+            int i=0;
             while(query_controlla.next()){
-                String u=query_controlla.getString("username");
-                String p=query_controlla.getString("psw");
+                i=Integer.parseInt(query_controlla.getString("conta"));
             }
-            if(!password.equals(query_controlla.getString("psw"))){
-                    request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
-                    return;
+            if(i==1){
+                Statement query2 = conn.createStatement();
+                ResultSet query_acc=query2.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
+                ArrayList<String> lista_u = new ArrayList<>();
+                ArrayList<String> lista_p = new ArrayList<>();
+                while(query_acc.next()){
+                    lista_u.add(query_acc.getString("username"));
+                    lista_p.add(query_acc.getString("psw"));
+                }
+                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
+                return;
             }
-            
-            request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
+            else
+            {
+                request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
+            }
 
             conn.close();
         } catch (Exception errore) {
@@ -56,6 +65,4 @@ public class e_accedi extends HttpServlet {
         }
         
     }
-
-
 }
