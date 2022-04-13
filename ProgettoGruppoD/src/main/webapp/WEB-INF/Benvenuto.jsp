@@ -24,9 +24,9 @@
                     <a class="navbar-brand" Style="color: white">Gruppo D</a>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav text-center">
-                                <a Style="color: white" class="nav-link" href="/WEB-INF/Prenotazioni.jsp">Prenotazione</a>
-                                <a Style="color: white" class="nav-link" href="/WEB-INF/Ordini.jsp">I miei ordini</a>
-                                <a Style="color: white" class="nav-link" href="/WEB-INF/Menu.jsp">Menu</a>
+                                <a Style="color: white" class="nav-link" href="r_prenotazioni">Prenotazione</a>
+                                <a Style="color: white" class="nav-link" href="r_ordini">I miei ordini</a>
+                                <a Style="color: white" class="nav-link" href="r_menu">Menu</a>
                             </div>
                         </div>
                     </div>
