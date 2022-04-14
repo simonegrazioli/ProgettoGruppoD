@@ -41,6 +41,7 @@ public class e_registrati extends HttpServlet {
             String sql = "INSERT INTO utenti (username, psw, mail, eta, sesso)" + 
                     "VALUES('" + user + "', '" + password + "', '" + mail + "', '" + eta + "', '" + sesso +"')";
             boolean result = query.execute(sql);
+            request.setAttribute("nome_u", user);
             request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
                 
             conn.close();

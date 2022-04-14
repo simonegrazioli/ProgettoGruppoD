@@ -33,5 +33,24 @@
             </nav>
         </div>
         <h1 style="text-align: center">Benvenuto</h1>
+        
+        <p>Hey clicca qui per vedere la pagina del tuo profilo</p>
+        <% 
+                if (request.getAttribute("nome_u") != null) {
+            %>
+                <p>${nome_u}</p>
+            <% 
+                }
+            %>
+        <div class="row justify-content-center">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <form action="e_profilo">
+                            <input type="submit" name="${nome_u}" value="Il tuo profilo">
+                        </form>
+                    </li>
+                </ul>
+        </div>
+        
     </body>
 </html>

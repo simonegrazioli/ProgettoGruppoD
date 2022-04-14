@@ -41,14 +41,7 @@ public class e_accedi extends HttpServlet {
                 i=Integer.parseInt(query_controlla.getString("conta"));
             }
             if(i==1){
-                Statement query2 = conn.createStatement();
-                ResultSet query_acc=query2.executeQuery("SELECT username,psw FROM utenti WHERE username='"+user+"'");
-                ArrayList<String> lista_u = new ArrayList<>();
-                ArrayList<String> lista_p = new ArrayList<>();
-                while(query_acc.next()){
-                    lista_u.add(query_acc.getString("username"));
-                    lista_p.add(query_acc.getString("psw"));
-                }
+                request.setAttribute("nome_u", user);
                 request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
                 return;
             }
