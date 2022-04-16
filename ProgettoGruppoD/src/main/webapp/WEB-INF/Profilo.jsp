@@ -12,6 +12,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Ciao, ecco i dati con i quali ti sei registrato!!</h1>
+        <%
+            boolean visibile = (boolean)request.getAttribute("visibile");
+            if (visibile) {  
+        %>
+            <div class="alert alert-secondary" role="alert">
+                <p><b>Username :</b> ${utente.getUser()}</p>
+                <p><b>Password :</b>${utente.getPsw()}</p>
+                <p><b>Mail: </b> ${utente.getMail()}</p>
+                <p><b>Eta: </b> ${utente.getEta()}</p>
+                <p><b>Sesso: </b> ${utente.getSesso()}</p>
+            </div>
+        <%  
+            } // Chiudo l'if                    
+        %>
+
     </body>
 </html>
