@@ -20,6 +20,10 @@ public class e_profilo extends HttpServlet {
             throws ServletException, IOException {
         try {
             String user = request.getParameter("nome_u");
+            if(!user.isEmpty()){
+                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
+                return;
+            }
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             ResultSet q = query.executeQuery("SELECT * FROM utenti WHERE username='" + user + "'");
