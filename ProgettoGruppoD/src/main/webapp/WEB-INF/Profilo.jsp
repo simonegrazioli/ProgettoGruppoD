@@ -14,14 +14,14 @@
     <body>
         <h1>Ciao, ecco i dati con i quali ti sei registrato!!</h1>
         <%  
-             Utenti utente=(Utenti)request.getAttribute("utente");
+             //Utenti utente=(Utenti)request.getAttribute("utente");
         %>
             <div class="alert alert-secondary" role="alert">
-                <p><b>Username :</b> ${utente.getUser()}</p>
-                <p><b>Password :</b>${utente.getPsw()}</p>
-                <p><b>Mail: </b> ${utente.getMail()}</p>
-                <p><b>Eta: </b> ${utente.getEta()}</p>
-                <p><b>Sesso: </b> ${utente.getSesso()}</p>
+                <p><b>Username :</b> utente.getUser()</p>
+                <p><b>Password :</b>utente.getPsw()</p>
+                <p><b>Mail: </b> utente.getMail()</p>
+                <p><b>Eta: </b> utente.getEta()</p>
+                <p><b>Sesso: </b> utente.getSesso()</p>
             </div>
     </body>
 </html>

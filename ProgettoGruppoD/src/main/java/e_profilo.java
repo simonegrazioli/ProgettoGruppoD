@@ -37,7 +37,7 @@ public class e_profilo extends HttpServlet {
 
         } catch (Exception errore) {
             request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
-        }
+            }
         
     }
 }

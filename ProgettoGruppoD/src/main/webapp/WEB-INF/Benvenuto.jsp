@@ -35,7 +35,7 @@
         <h1 style="text-align: center">Benvenuto</h1>
         
         <p>Hey clicca qui per vedere la pagina del tuo profilo</p>
-        <% 
+            <% 
                 if (request.getAttribute("nome_u") != null) {
             %>
                 <p>${nome_u}</p>
@@ -51,6 +51,7 @@
                     </li>
                 </ul>
         </div>
-        
+        <p>${mex}</p>
+
     </body>
 </html>
