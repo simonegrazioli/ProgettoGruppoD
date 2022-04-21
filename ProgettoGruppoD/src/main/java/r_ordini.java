@@ -29,7 +29,7 @@ public class r_ordini extends HttpServlet {
             ResultSet q = query.executeQuery("SELECT * FROM ordini WHERE fk_utente= (select id_utente from utenti where username='" + user + "')");
             Ordini u = new Ordini();
             while(q.next()){
-                u = new Utenti(q.getString("username"),q.getString("psw"),q.getString("mail"),Integer.parseInt(q.getString("eta")),q.getString("sesso"));
+                u = new Ordini();
             }
 
             request.setAttribute("utente", u);
