@@ -1,4 +1,5 @@
 import Database.DatabaseManager;
+import Models.Utenti;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -28,11 +29,13 @@ public class e_profilo extends HttpServlet {
             Statement query = conn.createStatement();
             ResultSet q = query.executeQuery("SELECT * FROM utenti WHERE username='" + user + "'");
             Utenti u = new Utenti();
+            ArrayList<Utenti> lista = new ArrayList<>();
             while(q.next()){
                 u = new Utenti(q.getString("username"),q.getString("psw"),q.getString("mail"),Integer.parseInt(q.getString("eta")),q.getString("sesso"));
+                lista.add(u);
             }
 
-            request.setAttribute("utente", u);
+            request.setAttribute("u", lista);
             request.getServletContext().getRequestDispatcher("/WEB-INF/Profilo.jsp").forward(request, response);
 
         } catch (Exception errore) {

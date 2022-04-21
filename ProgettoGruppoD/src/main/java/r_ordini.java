@@ -1,3 +1,4 @@
+import Models.Ordini;
 import Database.DatabaseManager;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "r_ordine", urlPatterns = {"/r_ordine"})
+@WebServlet(name = "r_ordini", urlPatterns = {"/r_ordini"})
 public class r_ordini extends HttpServlet {
     
     @Override
@@ -20,20 +21,25 @@ public class r_ordini extends HttpServlet {
             throws ServletException, IOException {
         try {
             String user = request.getParameter("nome_u");
+            /*
             if(!user.isEmpty()){
-                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
-                return;
+            request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
+            return;
             }
+            */
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
-            ResultSet q = query.executeQuery("SELECT * FROM ordini WHERE fk_utente= (select id_utente from utenti where username='" + user + "')");
-            Ordini u = new Ordini();
+            
+            ResultSet q = query.executeQuery("SELECT dataa,indirizzo_consegna,nome_piatto,quantita FROM ordini JOIN piatti ON id_piatto=fk_piatto WHERE fk_utente IN (SELECT id_utente FROM utenti WHERE username='"+user+"'");
+            Ordini o= new Ordini();
+            ArrayList<Ordini> lista = new ArrayList<>();
             while(q.next()){
-                u = new Ordini();
+                o = new Ordini(q.getString("dataa"),q.getString("indirizzo_consegna"),q.getString("nome_piatto"),Integer.parseInt(q.getString("quantita")));
+                lista.add(o);
             }
-
-            request.setAttribute("utente", u);
-            request.getServletContext().getRequestDispatcher("/WEB-INF/Profilo.jsp").forward(request, response);
+            
+            request.setAttribute("listaOrdini", lista);
+            request.getServletContext().getRequestDispatcher("/WEB-INF/Ordini.jsp").forward(request, response);
 
         } catch (Exception errore) {
             request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);

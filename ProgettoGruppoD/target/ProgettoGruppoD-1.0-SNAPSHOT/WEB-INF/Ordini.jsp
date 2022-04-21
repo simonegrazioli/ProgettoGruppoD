@@ -3,7 +3,7 @@
     Created on : 12 feb 2022, 11:37:13
     Author     : alinf
 --%>
-
+<%@taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,10 +30,12 @@
                             boolean visibile = (boolean)request.getAttribute("visibile");
                             if (visibile) {
                         %>
-                        <c:forEach items="${elOrdini}" var="ordini">
+                        <c:forEach items="${listaOrdini}" var="ordini">
                             <div class="alert alert-secondary" role="alert">
-                                <p><b>Nome Cognome:</b> ${persona.getNome()} ${persona.getCognome()}</p>
-                                <p><b>Ordine:</b> ${persona.getOrdine()} - <b>Nazione:</b> ${persona.getNazione()}</p>
+                                <p><b>Data: </b> ${Ordini.getData()}</p>
+                                <p><b>Indirizzo di consegna: </b> ${Ordini.getInd()}</p>
+                                <p><b>Piatto ordinato: </b> ${Ordini.getNome_piatto()}</p>
+                                <p><b>Quantità odirnata: </b> ${Ordini.getQuantita()}</p>
                             </div>
                         </c:forEach>
                         <%  
