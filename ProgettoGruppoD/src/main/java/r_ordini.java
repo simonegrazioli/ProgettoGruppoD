@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "r_ordine", urlPatterns = {"r_ordine"})
+@WebServlet(name = "r_ordine", urlPatterns = {"/r_ordine"})
 public class r_ordini extends HttpServlet {
     
     @Override
