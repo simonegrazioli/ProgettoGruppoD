@@ -21,20 +21,18 @@ public class r_ordini extends HttpServlet {
             throws ServletException, IOException {
         try {
             String user = request.getParameter("nome_u");
-            /*
             if(!user.isEmpty()){
-            request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
-            return;
+                request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
+                return;
             }
-            */
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-            ResultSet q = query.executeQuery("SELECT dataa,indirizzo_consegna,nome_piatto,quantita FROM ordini JOIN piatti ON id_piatto=fk_piatto WHERE fk_utente IN (SELECT id_utente FROM utenti WHERE username='"+user+"'");
+            ResultSet q = query.executeQuery("SELECT dataa,indirizzo_consegna,nome_piatto,quantita,COUNT(prezzo_piatto) AS 'costo_ordine' FROM ordini JOIN piatti ON id_piatto=fk_piatto WHERE fk_utente IN (SELECT id_utente FROM utenti WHERE username='"+user+"'");
             Ordini o= new Ordini();
             ArrayList<Ordini> lista = new ArrayList<>();
             while(q.next()){
-                o = new Ordini(q.getString("dataa"),q.getString("indirizzo_consegna"),q.getString("nome_piatto"),Integer.parseInt(q.getString("quantita")));
+                o = new Ordini(q.getString("dataa"),q.getString("indirizzo_consegna"),q.getString("nome_piatto"),Integer.parseInt(q.getString("quantita")),Double.parseDouble(q.getString("costo_ordine")));
                 lista.add(o);
             }
             

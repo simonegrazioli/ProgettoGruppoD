@@ -36,6 +36,7 @@
                                 <p><b>Indirizzo di consegna: </b> ${Ordini.getInd()}</p>
                                 <p><b>Piatto ordinato: </b> ${Ordini.getNome_piatto()}</p>
                                 <p><b>Quantità odirnata: </b> ${Ordini.getQuantita()}</p>
+                                <p><b>Costo: </b> ${Ordini.getCosto()}</p>                                
                             </div>
                         </c:forEach>
                         <%  

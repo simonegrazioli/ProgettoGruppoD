@@ -19,7 +19,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
-                    <form action="r_ordini">
+                    <form action="e_prenotazioni">
                         <br>
                         <table>
                             <thead style="color: #FF6600;">
@@ -39,17 +39,12 @@
                                 </c:forEach>
                             </tbody>
                         </table>
+                        <label for="ord">Dove vuoi mangiare?</label><br>
+                        <input type="text" id="ord">
                         <input type="submit" value="Invia" class="nav-link" style="color: white; border-style: none; margin: 30px auto; width:100px; height: 50px; font-size: 20px">
                     </form>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
     </body>
 </html>
