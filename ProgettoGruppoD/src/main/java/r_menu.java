@@ -26,7 +26,8 @@ public class r_menu extends HttpServlet {
                 Piatto p = new Piatto(risultato.getString("nome_piatto"), Integer.parseInt(risultato.getString("numero_persone")), Double.parseDouble(risultato.getString("prezzo_piatto")), Integer.parseInt(risultato.getString("fk_menu")));
                 lista.add(p);
             }
-            
+            String user=request.getParameter("nome_u");
+            request.setAttribute("ut",user);
             request.setAttribute("listaPiatti", lista);
             request.getServletContext().getRequestDispatcher("/WEB-INF/Menu.jsp").forward(request, response);
         }

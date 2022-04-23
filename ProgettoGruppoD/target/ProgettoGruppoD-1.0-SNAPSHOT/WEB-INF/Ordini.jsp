@@ -32,11 +32,11 @@
                         %>
                         <c:forEach items="${listaOrdini}" var="ordini">
                             <div class="alert alert-secondary" role="alert">
-                                <p><b>Data: </b> ${Ordini.getData()}</p>
-                                <p><b>Indirizzo di consegna: </b> ${Ordini.getInd()}</p>
-                                <p><b>Piatto ordinato: </b> ${Ordini.getNome_piatto()}</p>
-                                <p><b>Quantità odirnata: </b> ${Ordini.getQuantita()}</p>
-                                <p><b>Costo: </b> ${Ordini.getCosto()}</p>                                
+                                <p><b>Data: </b> ${ordini.getData()}</p>
+                                <p><b>Indirizzo di consegna: </b> ${ordini.getInd()}</p>
+                                <p><b>Piatto ordinato: </b> ${ordini.getNome_piatto()}</p>
+                                <p><b>Quantità odirnata: </b> ${ordini.getQuantita()}</p>
+                                <p><b>Costo: </b> ${ordini.getCosto()}</p>                                
                             </div>
                         </c:forEach>
                         <%  

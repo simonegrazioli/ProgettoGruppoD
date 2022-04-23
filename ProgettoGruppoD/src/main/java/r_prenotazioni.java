@@ -12,6 +12,8 @@ public class r_prenotazioni extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try{
+            String dove=request.getParameter("dove");
+            String user=request.getParameter("nome_u");
             
             request.getServletContext().getRequestDispatcher("/WEB-INF/Prenotazioni.jsp").forward(request, response);
         }

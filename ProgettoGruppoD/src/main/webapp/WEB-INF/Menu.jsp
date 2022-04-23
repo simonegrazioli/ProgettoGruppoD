@@ -14,13 +14,20 @@
     </head>
     <body>
         <div id="containerhome" style="margin-top: 100px;margin-bottom: 100px; margin-left: 200px;margin-right: 200px; background-color: #D2D2D2;border-radius: 10px;">
-            <div class="col d-flex justify-content-center" style="margin-top: 25px; color: #FF6600;padding: 30px">
+            <div class="col-12 d-flex justify-content-center" style="margin-top: 25px; color: #FF6600;padding: 30px">
                 <h1>Menù</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
-                    <form action="e_prenotazioni">
+                    <form action="r_prenotazioni">
                         <br>
+                        <%
+                            if (request.getAttribute("nome_u") != null) {
+                        %>
+                            <input type="hidden" name="${nome_u}">
+                        <% 
+                            }
+                        %>
                         <table>
                             <thead style="color: #FF6600;">
                             <th style="margin: 0px 50px">Quantità Selezionata</th>
@@ -40,7 +47,7 @@
                             </tbody>
                         </table>
                         <label for="ord">Dove vuoi mangiare?</label><br>
-                        <input type="text" id="ord">
+                        <input type="text" name="dove" value="Ristorante">
                         <input type="submit" value="Invia" class="nav-link" style="color: white; border-style: none; margin: 30px auto; width:100px; height: 50px; font-size: 20px">
                     </form>
                 </div>
