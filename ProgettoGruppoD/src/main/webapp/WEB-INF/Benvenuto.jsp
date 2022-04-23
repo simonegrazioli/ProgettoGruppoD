@@ -17,7 +17,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         
-        <link rel="shortcut icon" href="img/icona.png" />
+        <link rel="shortcut icon" href="img/icona.png"/>
+        
+        <style>
+            body{
+                background-color: #2B2929;
+            }
+        </style>
     </head>
     <body>
         <div class="pos-f-t">
@@ -26,36 +32,23 @@
                     <a class="navbar-brand" Style="color: white">Gruppo D</a>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav text-center">
+                                
                                 <a Style="color: white" class="nav-link" href="r_prenotazioni">Prenotazione</a>
                                 <a Style="color: white" class="nav-link" href="r_ordini">I miei ordini</a>
                                 <a Style="color: white" class="nav-link" href="r_menu">Menu</a>
+                                <a Style="color: white" class="nav-link" href="e_profilo">Profilo</a>
                             </div>
                         </div>
                     </div>
             </nav>
         </div>
         
-        <h1 style="text-align: center">Benvenuto</h1>
+        <h1 style="text-align: center; color: #D2D2D2;">Benvenuto</h1>
         
-        <p>Hey clicca qui per vedere la pagina del tuo profilo</p>
-            <% 
-                if (request.getAttribute("nome_u") != null) {
-            %>
-                <p>${nome_u}</p>
-            <% 
-                }
-            %>
-        <input type="hidden" name="${nome_u}">
-        <div class="row justify-content-center">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <form action="e_profilo">
-                            <input type="submit" name="${nome_u}" value="Il tuo profilo">
-                        </form>
-                    </li>
-                </ul>
-        </div>
-        <p>${mex}</p>
-
+        <img src="img/Immagine1.jpeg" alt="alt" style="margin-left: 20px"/>
+        <img src="img/Immagine2%20(1).jpeg" alt="alt"/>
+        <img src="img/Immagine3.jpeg" alt="alt"/>
+        
+        
     </body>
 </html>
