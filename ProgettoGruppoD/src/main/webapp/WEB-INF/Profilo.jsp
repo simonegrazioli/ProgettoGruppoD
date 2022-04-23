@@ -14,7 +14,6 @@
     </head>
     <body>
         <h1>Ciao, ecco i dati con i quali ti sei registrato!!</h1>
-        <c:forEach items="${u}" var="utente">
             <div class="alert alert-secondary" role="alert">
                 <p><b>Username :</b> ${u.getUser()}</p>
                 <p><b>Password :</b>${u.getPsw()}</p>
@@ -22,7 +21,6 @@
                 <p><b>Eta: </b> ${u.getEta()}</p>
                 <p><b>Sesso: </b> ${u.getSesso()}</p>
             </div>
-        </c:forEach>
 
     </body>
 </html>

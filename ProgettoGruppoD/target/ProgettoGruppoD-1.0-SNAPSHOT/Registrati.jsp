@@ -39,6 +39,7 @@
                             <input type="password" name="psw" placeholder="La tua password" class="form-control" style="width:175px; height: 35px"/><br>
                             <input type="email" name="mail" placeholder="La tua mail" class="form-control" style="width:175px;  height: 35px"/><br>
                             <input type="number" name="eta" placeholder="La tua età" class="form-control" min="14" max="120" style="width:175px; height: 35px"/><br>
+                            <input type="text" name="indirizzo" placeholder="Il tuo indirizzo" class="form-control" style="width:175px;  height: 35px"><br>
                             
                             <div class="form" >
                             <select name="sesso" style="border-radius: 5px; width:175px;  height: 35px">

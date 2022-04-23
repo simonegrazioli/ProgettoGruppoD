@@ -11,6 +11,39 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <title>Menù</title>
         <link rel="shortcut icon" href="img/icona.png" />
+        <!-- <style>
+        table{
+                border: 1px solid black;
+            }
+            
+            table tr th{
+                border: 1px solid black;
+            }
+            table tr td{
+                border: 1px solid black;
+            }
+            table tr #quantita{
+                border: 0px;
+            }
+        </style>
+         -->
+         <style>
+             body{
+                 background-image:  url(img/R.jpg)
+             }
+             body{
+    background-position: center center
+}
+body{
+    background-repeat: no repeat
+}
+body{
+    background-attachment: fixed
+}
+body{
+    background-size: cover
+}
+         </style>
     </head>
     <body>
         <div id="containerhome" style="margin-top: 100px;margin-bottom: 100px; margin-left: 200px;margin-right: 200px; background-color: #D2D2D2;border-radius: 10px;">
@@ -18,7 +51,7 @@
                 <h1>Menù</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
                     <form action="r_prenotazioni">
                         <br>
                         <%
@@ -28,17 +61,15 @@
                         <% 
                             }
                         %>
-                        <table>
+                        <table style="width: 750px; text-align: center">
                             <thead style="color: #FF6600;">
-                            <th style="margin: 0px 50px">Quantità Selezionata</th>
-                            <th style="margin: 0px 80px">Nome Piatto</th>
-                            <th style="margin: 0px 80px">Numero Persone</th>
-                            <th style="margin: 0px 50px">Costo Piatto</th>
+                            <th>Nome Piatto</th>
+                            <th>Numero Persone</th>
+                            <th>Costo Piatto</th>
                             </thead>
                             <tbody>
                                 <c:forEach items="${listaPiatti}" var="piatto" >
                                     <tr> 
-                                        <td><input type="number" min="0" max="10" name="quantita"></td>
                                         <td>${piatto.getNome()}</td>
                                         <td>${piatto.getNumeroPersone()}</td>
                                         <td>${piatto.getCostoPiatto()}€</td>
@@ -46,9 +77,6 @@
                                 </c:forEach>
                             </tbody>
                         </table>
-                        <label for="ord">Dove vuoi mangiare?</label><br>
-                        <input type="text" name="dove" value="Ristorante">
-                        <input type="submit" value="Invia" class="nav-link" style="color: white; border-style: none; margin: 30px auto; width:100px; height: 50px; font-size: 20px">
                     </form>
                 </div>
             </div>

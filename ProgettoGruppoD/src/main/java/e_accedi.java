@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "e_accedi", urlPatterns = {"/e_accedi"})
 public class e_accedi extends HttpServlet {
@@ -41,15 +42,15 @@ public class e_accedi extends HttpServlet {
                 i=Integer.parseInt(query_controlla.getString("conta"));
             }
             if(i==1){
-                request.setAttribute("nome_u", user);
+                HttpSession sessione = request.getSession();
+                sessione.setAttribute("nome_u", user);
                 request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);
-                return;
             }
             else
             {
-                request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
                 request.setAttribute("messaggio", "Non è satto possibile effettuare l'accesso");
                 request.setAttribute("coloreMessaggio", "red");
+                request.getServletContext().getRequestDispatcher("/Accedi.jsp").forward(request, response);
             }
 
             conn.close();

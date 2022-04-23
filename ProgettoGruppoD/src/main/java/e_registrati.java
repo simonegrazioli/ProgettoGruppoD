@@ -21,7 +21,8 @@ public class e_registrati extends HttpServlet {
             String s_eta = request.getParameter("eta"); 
             int eta = Integer.parseInt(s_eta);
             String sesso = request.getParameter("sesso");
-            if (user.isEmpty() || password.isEmpty() || mail.isEmpty() || sesso.isEmpty() || (eta<14 || eta>120)) 
+            String indirizzo = request.getParameter("Indirizzo");
+            if (user.isEmpty() || password.isEmpty() || mail.isEmpty() || sesso.isEmpty() || (eta<14 || eta>120) || indirizzo.isEmpty()) 
             {
                     request.setAttribute("messaggio", "Hai inserito dei dati errati, riprova.");
                     request.setAttribute("coloreMessaggio", "red");
@@ -32,8 +33,8 @@ public class e_registrati extends HttpServlet {
             Connection conn = DatabaseManager.generaIstanza().connetti();
             Statement query = conn.createStatement();
             
-            String sql = "INSERT INTO utenti (username, psw, mail, eta, sesso)" + 
-                    "VALUES('" + user + "', '" + password + "', '" + mail + "', '" + eta + "', '" + sesso +"')";
+            String sql = "INSERT INTO utenti (username, psw, mail, eta, sesso, indirizzo)" + 
+                    "VALUES('" + user + "', '" + password + "', '" + mail + "', '" + eta + "', '" + sesso +"', " + indirizzo + "')";
             boolean result = query.execute(sql);
             request.setAttribute("nome_u", user);
             request.getServletContext().getRequestDispatcher("/WEB-INF/Benvenuto.jsp").forward(request, response);

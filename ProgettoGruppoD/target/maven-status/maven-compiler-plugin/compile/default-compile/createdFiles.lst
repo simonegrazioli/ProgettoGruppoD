@@ -1,7 +1,9 @@
 Database\DatabaseManager.class
+Models\Ordini.class
 Models\Utenti.class
 e_profilo.class
 e_accedi.class
+home.class
 Models\Piatto.class
 r_menu.class
 r_prenotazioni.class
