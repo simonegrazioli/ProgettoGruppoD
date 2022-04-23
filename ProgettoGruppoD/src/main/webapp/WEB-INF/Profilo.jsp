@@ -28,20 +28,20 @@
                 <div class="pos-f-t">
             <nav class="navbar navbar-expand-lg" style="background-color: #FF6600;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" Style="color: #D2D2D2;">Gruppo D</a>
+                    <a class="navbar-brand" Style="color: #000000;"><b><i>Gruppo D</i></b></a>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav text-center">
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_menu"><b>Menu</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="#"><b>Profilo</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="r_menu"><b>Menu</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="#"><b>Profilo</b></a>
                             </div>
                         </div>
                     </div>
             </nav>
         </div>
-        <h1>Ciao, ecco i dati con i quali ti sei registrato!!</h1>
+        <h1 ><font color="D2D2D2">Ciao, ecco i dati con i quali ti sei registrato!!</font></h1>
             <div class="alert alert-secondary" role="alert">
                 <p><b>Username :</b> ${u.getUser()}</p>
                 <p><b>Password :</b>${u.getPsw()}</p>

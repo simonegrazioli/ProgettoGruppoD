@@ -37,14 +37,14 @@
                 <div class="pos-f-t">
             <nav class="navbar navbar-expand-lg" style="background-color: #FF6600;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" Style="color: #D2D2D2;">Gruppo D</a>
+                    <a class="navbar-brand" Style="color: #000000;"><b><i>Gruppo D</i></b></a>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav text-center">
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="#"><b>Menu</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
-                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="e_profilo"><b>Profilo</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="#"><b>Menu</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
+                                <a Style="color:#ffffff;margin-right: 25px" class="nav-link" href="e_profilo"><b>Profilo</b></a>
                             </div>
                         </div>
                     </div>
