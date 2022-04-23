@@ -27,32 +27,35 @@
             }
         </style>
          -->
-         <style>
-             body{
-                 background-image:  url(img/R.jpg)
-             }
-             body{
-    background-position: center center
-}
-body{
-    background-repeat: no repeat
-}
-body{
-    background-attachment: fixed
-}
-body{
-    background-size: cover
-}
-         </style>
+        <style>
+            body{
+                background-color: #2B2929;
+            }
+        </style>
     </head>
     <body>
-        <div id="containerhome" style="margin-top: 100px;margin-bottom: 100px; margin-left: 200px;margin-right: 200px; background-color: #D2D2D2;border-radius: 10px;">
+                <div class="pos-f-t">
+            <nav class="navbar navbar-expand-lg" style="background-color: #FF6600;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" Style="color: #D2D2D2;">Gruppo D</a>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav text-center">
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="#"><b>Menu</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="e_profilo"><b>Profilo</b></a>
+                            </div>
+                        </div>
+                    </div>
+            </nav>
+        </div>
+        <div id="containerhome" style="margin-top: 100px;margin-bottom: 100px; margin-left: 350px;margin-right: 350px; background-color: #D2D2D2;border-radius: 10px;">
             <div class="col-12 d-flex justify-content-center" style="margin-top: 25px; color: #FF6600;padding: 30px">
                 <h1>Menù</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <form action="r_prenotazioni">
+                <div class="col-12 d-flex justify-content-center" style="margin-bottom: 25px">
                         <br>
                         <%
                             if (request.getAttribute("nome_u") != null) {
@@ -77,7 +80,6 @@ body{
                                 </c:forEach>
                             </tbody>
                         </table>
-                    </form>
                 </div>
             </div>
         </div>

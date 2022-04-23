@@ -14,8 +14,29 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         
         <link rel="shortcut icon" href="img/icona.png" />
+        <style>
+            body{
+                background-color: #2B2929;
+            }
+        </style>
     </head>
     <body>
+                <div class="pos-f-t">
+            <nav class="navbar navbar-expand-lg" style="background-color: #FF6600;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" Style="color: #D2D2D2;">Gruppo D</a>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav text-center">
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_prenotazioni"><b>Prenotazione</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_menu"><b>Menu</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="#"><b>I miei ordini</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="e_profilo"><b>Profilo</b></a>
+                            </div>
+                        </div>
+                    </div>
+            </nav>
+        </div>
         <div id="container">
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">

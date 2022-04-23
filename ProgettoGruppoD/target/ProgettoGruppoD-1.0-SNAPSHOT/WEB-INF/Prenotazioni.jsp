@@ -11,18 +11,44 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <title>Menù</title>
         <link rel="shortcut icon" href="img/icona.png" />
+        <style>
+            body{
+                background-color: #2B2929;
+            }
+        </style>
     </head>
     <body>
+                <div class="pos-f-t">
+            <nav class="navbar navbar-expand-lg" style="background-color: #FF6600;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" Style="color: #D2D2D2;">Gruppo D</a>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav text-center">
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="home"><b>Home</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="#"><b>Prenotazione</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_menu"><b>Menu</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="r_ordini"><b>I miei ordini</b></a>
+                                <a Style="color:#D2D2D2;margin-right: 25px" class="nav-link" href="e_profilo"><b>Profilo</b></a>
+                            </div>
+                        </div>
+                    </div>
+            </nav>
+        </div>
         <div id="containerhome" style="margin-top: 100px;margin-bottom: 100px; margin-left: 200px;margin-right: 200px; background-color: #D2D2D2;border-radius: 10px;">
             <div class="col-12 d-flex justify-content-center" style="margin-top: 25px; color: #FF6600;padding: 30px">
                 <h1>Menù</h1>
             </div>
-            <p>${messaggio}</p>
             <div class="row justify-content-center">
                 <div class="col-12 justify-content-center">
-                    
                     <br>
-                    
+                    <table>
+                            <thead style="color: #FF6600;">
+                            <th style="width: 205px">Nome</th>
+                            <th style="width: 195px">Costo</th>
+                            <th style="width: 100px">Dose per</th>
+                            
+                            </thead>
+                    </table>
                     <c:forEach items="${listaPiatti}" var="piatto" >
                         <div>
                             <form action="r_inserisci_prenotazione" class="form-control">
@@ -40,7 +66,6 @@
                             </form>
                         </div><br>
                     </c:forEach>
-                        <a href="home">Torna alla home</a>
                 </div>
             </div>
         </div>
